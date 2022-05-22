@@ -1,59 +1,32 @@
-/* This example requires Tailwind CSS v2.0+ */
-import { Fragment } from 'react'
-import { Disclosure } from '@headlessui/react'
-import { MenuIcon, XIcon } from '@heroicons/react/outline'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+const menu = <>
+    <li><Link to='/'>Home</Link> </li>
+    <li><Link to='/login'>Login</Link> </li>
+</>
 
 const Header = () => {
     return (
-        <Disclosure as="nav" className="bg-gray-800">
-            {({ open }) => (
-                <>
-                    <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-                        <div className="relative flex items-center justify-between h-16">
-                            <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                                {/* Mobile menu button*/}
-                                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-                                    <span className="sr-only">Open main menu</span>
-                                    {open ? (
-                                        <XIcon className="block h-6 w-6" aria-hidden="true" />
-                                    ) : (
-                                        <MenuIcon className="block h-6 w-6" aria-hidden="true" />
-                                    )}
-                                </Disclosure.Button>
-                            </div>
-                            <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-                                <div className="flex-shrink-0 flex items-center">
-                                    <h1 className='uppercase text-2xl font-bold text-white'>Auto<span className='text-orange-500'>Parts</span></h1>
-                                </div>
-                                <div className="hidden sm:block sm:ml-6">
-                                    <div className="flex space-x-4">
-                                        <Link to='/' className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'>Home</Link>
-                                        <Link to='/' className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'>Tools</Link>
-                                        <Link to='/' className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'>Blogs</Link>
-                                        <Link to='/login' className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'>Login</Link>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <Disclosure.Panel className="sm:hidden">
-                        <div className="px-2 pt-2 pb-3 space-y-1">
-                            <Link className='text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium' to='/' >Home</Link>
-                            <Link className='text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium' to='/' >Tools</Link>
-                            <Link className='text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium' to='/' >Blogs</Link>
-                            <Link className='text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium' to='/login' >Login</Link>
-                        </div>
-
-                    </Disclosure.Panel>
-                </>
-            )
-            }
-        </Disclosure >
-    )
-}
-
+        <div className="navbar bg-base-100">
+            <div className="navbar-start">
+                <div className="dropdown">
+                    <label tabIndex="0" className="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                    </label>
+                    <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                        {menu}
+                    </ul>
+                </div>
+                <Link to='/' className="btn btn-ghost normal-case text-xl text-primary">AUTOPARTS</Link>
+            </div>
+            <div className="navbar-end hidden lg:flex">
+                <ul className="menu menu-horizontal p-0">
+                    {menu}
+                </ul>
+            </div>
+        </div>
+    );
+};
 
 export default Header;
