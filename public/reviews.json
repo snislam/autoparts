@@ -1,0 +1,51 @@
+[
+    {
+        "_id": 101,
+        "name": "Arnold Jhon",
+        "review": "AutoParts are the place where I trusted before 10 years and till now I am with them. Just awesome company to supply car parts.",
+        "ratings": 5,
+        "img": ""
+    },
+    {
+        "_id": 102,
+        "name": "Jhon Caprio",
+        "review": "AutoParts are the place where I trusted before 10 years and till now I am with them. Just awesome company to supply car parts.",
+        "ratings": 5,
+        "img": ""
+    },
+    {
+        "_id": 103,
+        "name": "Samuel Disuja",
+        "review": "AutoParts are the place where I trusted before 10 years and till now I am with them. Just awesome company to supply car parts.",
+        "ratings": 5,
+        "img": ""
+    },
+    {
+        "_id": 104,
+        "name": "Mac Donald",
+        "review": "AutoParts are the place where I trusted before 10 years and till now I am with them. Just awesome company to supply car parts.",
+        "ratings": 5,
+        "img": ""
+    },
+    {
+        "_id": 105,
+        "name": "Borish Robert",
+        "review": "AutoParts are the place where I trusted before 10 years and till now I am with them. Just awesome company to supply car parts.",
+        "ratings": 5,
+        "img": ""
+    },
+    {
+        "_id": 106,
+        "name": "William Paul",
+        "review": "AutoParts are the place where I trusted before 10 years and till now I am with them. Just awesome company to supply car parts.",
+        "ratings": 5,
+        "img": ""
+    },
+    {
+        "_id": 107,
+        "name": "Mcc Trigger",
+        "review": "AutoParts are the place where I trusted before 10 years and till now I am with them. Just awesome company to supply car parts.",
+        "ratings": 5,
+        "img": ""
+    }
+]

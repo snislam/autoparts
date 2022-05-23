@@ -1,0 +1,92 @@
+[
+    {
+        "_id": 101,
+        "name": "AutoMobile v3 body",
+        "price": 129,
+        "quantity": 15000,
+        "img": "https://i.ibb.co/GnLt2Fc/automobile-958185-640.jpg",
+        "min_order_qnt": 350,
+        "description": "This is v3 engine for cars. This parts has the high capacity to keep running with super milage in the road."
+    },
+    {
+        "_id": 102,
+        "name": "Car gear body",
+        "price": 59,
+        "quantity": 25000,
+        "img": "https://i.ibb.co/51MdQ8f/car-2322779-640.jpg",
+        "min_order_qnt": 450,
+        "description": "This is gear body for cars. This parts has the high capacity to keep running with super milage in the road."
+    },
+    {
+        "_id": 103,
+        "name": "Top sheild",
+        "price": 43,
+        "quantity": 15000,
+        "img": "https://i.ibb.co/tDQm0k9/candle-3992363-640.jpg",
+        "min_order_qnt": 450,
+        "description": "This is gear body for cars. This parts has the high capacity to keep running with super milage in the road."
+    },
+    {
+        "_id": 104,
+        "name": "Car back door sync",
+        "price": 119,
+        "quantity": 215000,
+        "img": "https://i.ibb.co/qmCmSgw/car-621820-640.jpg",
+        "min_order_qnt": 850,
+        "description": "This is gear body for cars. This parts has the high capacity to keep running with super milage in the road."
+    },
+    {
+        "_id": 105,
+        "name": "Looking glass",
+        "price": 19,
+        "quantity": 55000,
+        "img": "https://i.ibb.co/dKQ4pHm/clutch-2755548-640.jpg",
+        "min_order_qnt": 450,
+        "description": "This is gear body for cars. This parts has the high capacity to keep running with super milage in the road."
+    },
+    {
+        "_id": 106,
+        "name": "Coling fan",
+        "price": 15,
+        "quantity": 120000,
+        "img": "https://i.ibb.co/tDQm0k9/candle-3992363-640.jpg",
+        "min_order_qnt": 1000,
+        "description": "This is gear body for cars. This parts has the high capacity to keep running with super milage in the road."
+    },
+    {
+        "_id": 107,
+        "name": "Car Stiaring",
+        "price": 29,
+        "quantity": 45000,
+        "img": "https://i.ibb.co/qmCmSgw/car-621820-640.jpg",
+        "min_order_qnt": 500,
+        "description": "This is gear body for cars. This parts has the high capacity to keep running with super milage in the road."
+    },
+    {
+        "_id": 108,
+        "name": "Big Gear for car",
+        "price": 79,
+        "quantity": 27000,
+        "img": "https://i.ibb.co/dKQ4pHm/clutch-2755548-640.jpg",
+        "min_order_qnt": 1000,
+        "description": "This is gear body for cars. This parts has the high capacity to keep running with super milage in the road."
+    },
+    {
+        "_id": 109,
+        "name": "Wheel with tools",
+        "price": 99,
+        "quantity": 35000,
+        "img": "https://i.ibb.co/jrR5dkb/bmw-4993779-640.jpg",
+        "min_order_qnt": 750,
+        "description": "This is gear body for cars. This parts has the high capacity to keep running with super milage in the road."
+    },
+    {
+        "_id": 110,
+        "name": "Head light for c3 car",
+        "price": 49,
+        "quantity": 10000,
+        "img": "https://i.ibb.co/5K0c57R/clutch-2755549-640.jpg",
+        "min_order_qnt": 250,
+        "description": "This is gear body for cars. This parts has the high capacity to keep running with super milage in the road."
+    }
+]
