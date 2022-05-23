@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 
-const Login = () => {
+const Register = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
     const onSubmit = data => {
@@ -13,8 +13,25 @@ const Login = () => {
     return (
         <div className='px-12 md:px-0'>
             <div className='w-full md:w-1/2 mx-auto border-2 rounded-md shadow-md p-10 my-20 '>
-                <h1 className='text-2xl font-semibold text-center mb-5'>Login</h1>
+                <h1 className='text-2xl font-semibold text-center mb-5'>Registration</h1>
                 <form onSubmit={handleSubmit(onSubmit)}>
+                    <input
+                        type='text'
+                        placeholder='Enter your name'
+                        className='w-full border-2 rounded-md p-3'
+                        {...register("name", {
+                            required: {
+                                value: true,
+                                message: 'This field is required.'
+                            }
+                        })}
+                    />
+                    <label className="label">
+                        <span className="label-text-alt">
+                            {errors.name?.type === 'required' && <p className='text-warning'>{errors.name?.message}</p>}
+                        </span>
+                    </label>
+
                     <input
                         type='email'
                         placeholder='Enter your email'
@@ -59,16 +76,13 @@ const Login = () => {
                         </span>
                     </label>
 
-                    <p className='mb-3'>New to AutoParts? <Link to='/register' className='text-primary'>Create an account.</Link></p>
+                    <p className='mb-3'>Already have an account? <Link to='/login' className='text-primary'>Please Login.</Link></p>
 
-
-                    <input className='w-full border-2 rounded-md p-3 bg-blue-600 hover:bg-blue-700 duration-700 text-white font-semibold' type="submit" value='Login' />
-
-                    <p className='mt-3'>Forgot Password? <Link to='/resetpassword' className='text-primary'>Reset.</Link></p>
+                    <input className='w-full border-2 rounded-md p-3 bg-blue-600 hover:bg-blue-700 duration-700 text-white font-semibold' type="submit" value='Register' />
                 </form>
             </div>
         </div>
     );
 };
 
-export default Login;
+export default Register;
