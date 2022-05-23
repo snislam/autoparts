@@ -1,5 +1,7 @@
 import React from 'react';
 import BusinessSummary from './BusinessSummary';
+import CallToAction from './CallToAction';
+import Featured from './Featured';
 import HeroBanner from './HeroBanner';
 import ProductHome from './ProductHome';
 import ReviewsHome from './ReviewsHome';
@@ -9,8 +11,10 @@ const Home = () => {
         <div>
             <HeroBanner />
             <ProductHome />
-            <ReviewsHome />
+            <Featured />
             <BusinessSummary />
+            <ReviewsHome />
+            <CallToAction />
         </div>
     );
 };

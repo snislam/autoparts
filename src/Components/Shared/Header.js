@@ -8,10 +8,12 @@ const Header = () => {
     const [user] = useAuthState(auth)
     const menu = <>
         <li><Link to='/'>Home</Link> </li>
-        <li><Link to='/test'>test</Link> </li>
         {
             user ?
-                <li><button onClick={() => signOut(auth)}>Sign Out</button></li>
+                <>
+                    <li><Link to='/dashboard'>Dashboard</Link> </li>
+                    <li><button onClick={() => signOut(auth)}>Sign Out</button></li>
+                </>
                 :
                 <li><Link to='/login'>Login</Link> </li>
         }
