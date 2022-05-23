@@ -1,6 +1,6 @@
 import React from 'react';
 import { useQuery } from 'react-query';
-import Loading from '../../Shared/Header/Loading';
+import Loading from '../../Shared/Loading';
 import Review from './Review';
 
 const ReviewsHome = () => {

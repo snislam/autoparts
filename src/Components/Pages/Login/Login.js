@@ -1,10 +1,10 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
-import SocialLogin from './SocialLogin';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import Loading from '../../Shared/Header/Loading';
+import Loading from '../../Shared/Loading';
+import SocialLogin from './SocialLogin';
 
 const Login = () => {
     const [
@@ -16,9 +16,11 @@ const Login = () => {
     const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
     if (user || guser) {
-        navigate('/')
+        navigate(from, { replace: true })
     }
 
     if (loading || gloading) {
