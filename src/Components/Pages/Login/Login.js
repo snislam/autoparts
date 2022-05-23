@@ -1,13 +1,32 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import auth from '../../../firebase.init';
 import SocialLogin from './SocialLogin';
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import Loading from '../../Shared/Header/Loading';
 
 const Login = () => {
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
+    const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
+    const navigate = useNavigate();
 
+    if (user || guser) {
+        navigate('/')
+    }
+
+    if (loading || gloading) {
+        return <Loading />
+    }
     const onSubmit = data => {
-        console.log(data)
+        const { email, password } = data;
+        signInWithEmailAndPassword(email, password);
         reset();
     }
 
@@ -62,12 +81,14 @@ const Login = () => {
 
                     <p className='mb-3'>New to AutoParts? <Link to='/register' className='text-primary'>Create an account.</Link></p>
 
+                    <p className='text-red mt-3'>{error?.message || gerror?.message}</p>
+
 
                     <input className='w-full border-2 rounded-md p-3 bg-blue-600 hover:bg-blue-700 duration-700 text-white font-semibold' type="submit" value='Login' />
 
                     <p className='mt-3'>Forgot Password? <Link to='/resetpassword' className='text-primary'>Reset.</Link></p>
                 </form>
-                <SocialLogin />
+                <SocialLogin signInWithGoogle={signInWithGoogle} />
             </div>
         </div>
     );

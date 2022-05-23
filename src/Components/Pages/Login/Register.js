@@ -1,13 +1,33 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import SocialLogin from './SocialLogin';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
+import Loading from '../../Shared/Header/Loading';
 
 const Register = () => {
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth);
+    const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
+    const navigate = useNavigate();
+
+    if (user || guser) {
+        navigate('/')
+    }
+
+    if (loading || gloading) {
+        return <Loading />
+    }
 
     const onSubmit = data => {
-        console.log(data)
+        const { email, password } = data;
+        createUserWithEmailAndPassword(email, password)
         reset();
     }
 
@@ -77,11 +97,13 @@ const Register = () => {
                         </span>
                     </label>
 
+                    <p className='text-red mt-3'>{error?.message || gerror?.message}</p>
+
                     <p className='mb-3'>Already have an account? <Link to='/login' className='text-primary'>Please Login.</Link></p>
 
                     <input className='w-full border-2 rounded-md p-3 bg-blue-600 hover:bg-blue-700 duration-700 text-white font-semibold' type="submit" value='Register' />
                 </form>
-                <SocialLogin />
+                <SocialLogin signInWithGoogle={signInWithGoogle} />
             </div>
         </div>
     );
