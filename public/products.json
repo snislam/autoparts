@@ -1,6 +1,5 @@
 [
     {
-        "_id": 101,
         "name": "AutoMobile v3 body",
         "price": 129,
         "quantity": 15000,
@@ -9,7 +8,6 @@
         "description": "This is v3 engine for cars. This parts has the high capacity to keep running with super milage in the road."
     },
     {
-        "_id": 102,
         "name": "Car gear body",
         "price": 59,
         "quantity": 25000,
@@ -18,7 +16,6 @@
         "description": "This is gear body for cars. This parts has the high capacity to keep running with super milage in the road."
     },
     {
-        "_id": 103,
         "name": "Top sheild",
         "price": 43,
         "quantity": 15000,
@@ -27,7 +24,6 @@
         "description": "This is gear body for cars. This parts has the high capacity to keep running with super milage in the road."
     },
     {
-        "_id": 104,
         "name": "Car back door sync",
         "price": 119,
         "quantity": 215000,
@@ -36,7 +32,6 @@
         "description": "This is gear body for cars. This parts has the high capacity to keep running with super milage in the road."
     },
     {
-        "_id": 105,
         "name": "Looking glass",
         "price": 19,
         "quantity": 55000,
@@ -45,7 +40,6 @@
         "description": "This is gear body for cars. This parts has the high capacity to keep running with super milage in the road."
     },
     {
-        "_id": 106,
         "name": "Coling fan",
         "price": 15,
         "quantity": 120000,
@@ -54,7 +48,6 @@
         "description": "This is gear body for cars. This parts has the high capacity to keep running with super milage in the road."
     },
     {
-        "_id": 107,
         "name": "Car Stiaring",
         "price": 29,
         "quantity": 45000,
@@ -63,7 +56,6 @@
         "description": "This is gear body for cars. This parts has the high capacity to keep running with super milage in the road."
     },
     {
-        "_id": 108,
         "name": "Big Gear for car",
         "price": 79,
         "quantity": 27000,
@@ -72,7 +64,6 @@
         "description": "This is gear body for cars. This parts has the high capacity to keep running with super milage in the road."
     },
     {
-        "_id": 109,
         "name": "Wheel with tools",
         "price": 99,
         "quantity": 35000,
@@ -81,7 +72,6 @@
         "description": "This is gear body for cars. This parts has the high capacity to keep running with super milage in the road."
     },
     {
-        "_id": 110,
         "name": "Head light for c3 car",
         "price": 49,
         "quantity": 10000,

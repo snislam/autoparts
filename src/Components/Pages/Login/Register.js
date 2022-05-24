@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SocialLogin from './SocialLogin';
-import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading';
 
@@ -14,6 +14,7 @@ const Register = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
     const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const navigate = useNavigate();
     const location = useLocation();
@@ -23,13 +24,14 @@ const Register = () => {
         navigate(from, { replace: true })
     }
 
-    if (loading || gloading) {
+    if (loading || gloading || updating) {
         return <Loading />
     }
 
-    const onSubmit = data => {
-        const { email, password } = data;
-        createUserWithEmailAndPassword(email, password)
+    const onSubmit = async data => {
+        const { email, password, name } = data;
+        await createUserWithEmailAndPassword(email, password);
+        await updateProfile({ displayName: name });
         reset();
     }
 
@@ -99,7 +101,7 @@ const Register = () => {
                         </span>
                     </label>
 
-                    <p className='text-red mt-3'>{error?.message || gerror?.message}</p>
+                    <p className='text-red mt-3'>{error?.message || gerror?.message || updateError?.message}</p>
 
                     <p className='mb-3'>Already have an account? <Link to='/login' className='text-primary'>Please Login.</Link></p>
 

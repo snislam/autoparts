@@ -4,7 +4,7 @@ import Loading from '../../Shared/Loading';
 import SingleProductCard from './SingleProductCard';
 
 const ProductHome = () => {
-    const { data: products, isLoading } = useQuery('products', () => fetch('products.json').then(res => res.json()))
+    const { data: products, isLoading } = useQuery('products', () => fetch('http://localhost:5000/products').then(res => res.json()))
     let productsArr;
 
     if (isLoading) {
