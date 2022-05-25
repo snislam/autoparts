@@ -5,11 +5,12 @@ import Loading from '../../Shared/Loading';
 import { useForm } from 'react-hook-form';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
+import { toast } from 'react-toastify';
 
 const Purchase = () => {
     const [user, loading] = useAuthState(auth)
     const { id } = useParams();
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const { data: product, isLoading } = useQuery('singleProduct', () => fetch(`http://localhost:5000/purchase/${id}`).then(res => res.json()));
 
 
@@ -19,7 +20,24 @@ const Purchase = () => {
 
     const { img, name, price, quantity, min_order_qnt } = product;
     const onSubmit = data => {
-        console.log(data)
+        const totalPrice = data.quantity * price;
+        const order = { ...data, totalPrice }
+        console.log(order)
+
+        fetch('http://localhost:5000/orders', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            },
+            body: JSON.stringify(order)
+        }).then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    toast.success('OrderPlaced. Go to dashboard and pay.')
+                    reset();
+                }
+            })
     }
 
     return (
