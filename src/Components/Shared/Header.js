@@ -3,13 +3,13 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { signOut } from 'firebase/auth';
-import Loading from './Loading';
 
 const Header = () => {
-    const [user, loading] = useAuthState(auth)
+    const [user] = useAuthState(auth)
 
-    if (loading) {
-        return <Loading />
+    const handelSignOut = () => {
+        signOut(auth);
+        localStorage.removeItem('accessToken');
     }
 
     const menu = <>
@@ -19,7 +19,7 @@ const Header = () => {
                 <>
                     <li><Link to='/dashboard'>Dashboard</Link> </li>
                     <li className='bg-slate-300'><p>Hello, {user.displayName?.split(' ')[0]}</p></li>
-                    <li><button onClick={() => signOut(auth)}>Sign Out</button></li>
+                    <li><button onClick={handelSignOut}>Sign Out</button></li>
                 </>
                 :
                 <li><Link to='/login'>Login</Link> </li>

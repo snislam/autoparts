@@ -14,7 +14,8 @@ const UserRow = ({ user, index, refetch }) => {
         })
             .then(res => res.json())
             .then(data => {
-                if (data.modifiedCount > 0) {
+                console.log(data)
+                if (data.result.modifiedCount > 0) {
                     toast.success('Successfully added as an admin.')
                     refetch();
                 }
