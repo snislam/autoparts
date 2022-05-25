@@ -17,7 +17,11 @@ const MyProfile = () => {
         const name = e.target.name.value;
         const email = e.target.email.value;
         const number = e.target.number.value;
-        const updatedUser = { name, email, number }
+        const education = e.target.education.value;
+        const location = e.target.location.value;
+        const city = e.target.city.value;
+        const linkdin = e.target.linkdin.value;
+        const updatedUser = { name, email, number, education, location, city, linkdin }
 
         fetch(`http://localhost:5000/user/update/${email}`, {
             method: 'PUT',
@@ -30,7 +34,6 @@ const MyProfile = () => {
             .then(data => {
                 if (data.modifiedCount) {
                     toast.success('Information Saved')
-                    e.target.number.value = ''
                 }
             })
     }
@@ -72,6 +75,50 @@ const MyProfile = () => {
                         type="text"
                         name='number'
                         placeholder='Enter your mobile number'
+                        class="input input-bordered w-full" />
+                </div>
+
+                <div class="form-control w-full">
+                    <label class="label">
+                        <span class="label-text">Education</span>
+                    </label>
+                    <input
+                        type="text"
+                        name='education'
+                        placeholder='Education ex. HSC'
+                        class="input input-bordered w-full" />
+                </div>
+
+                <div class="form-control w-full">
+                    <label class="label">
+                        <span class="label-text">Location</span>
+                    </label>
+                    <input
+                        type="text"
+                        name='location'
+                        placeholder='Location'
+                        class="input input-bordered w-full" />
+                </div>
+
+                <div class="form-control w-full">
+                    <label class="label">
+                        <span class="label-text">City</span>
+                    </label>
+                    <input
+                        type="text"
+                        name='city'
+                        placeholder='City Name'
+                        class="input input-bordered w-full" />
+                </div>
+
+                <div class="form-control w-full">
+                    <label class="label">
+                        <span class="label-text">LinkdIn Profile link</span>
+                    </label>
+                    <input
+                        type="text"
+                        name='linkdin'
+                        placeholder='LinkdIn Profile link'
                         class="input input-bordered w-full" />
                 </div>
 
