@@ -5,6 +5,7 @@ import SocialLogin from './SocialLogin';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading';
+import useToken from '../../../hooks/useToken';
 
 const Register = () => {
     const [
@@ -15,12 +16,14 @@ const Register = () => {
     ] = useCreateUserWithEmailAndPassword(auth);
     const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+    const [token] = useToken(user || guser)
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
 
-    if (user || guser) {
+
+    if (token) {
         navigate(from, { replace: true })
     }
 
