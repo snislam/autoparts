@@ -21,7 +21,7 @@ const Purchase = () => {
     const { img, name, price, quantity, min_order_qnt } = product;
     const onSubmit = data => {
         const totalPrice = data.quantity * price;
-        const order = { ...data, totalPrice }
+        const order = { ...data, totalPrice, productName: name, productId: product._id }
         console.log(order)
 
         fetch('http://localhost:5000/orders', {
@@ -53,7 +53,7 @@ const Purchase = () => {
             </div >
             <div className='w-full py-5 px-5 mx-auto'>
                 <h2 className='text-center my-5 text-3xl font-semibold'>Fill the info to Order</h2>
-                <form onClick={handleSubmit(onSubmit)} className=''>
+                <form onSubmit={handleSubmit(onSubmit)} className=''>
                     <div className="form-control w-full my-3">
                         <label className="label">
                             <span className="label-text">Your name</span>
