@@ -20,6 +20,8 @@ import ManageAllOrder from './Components/Pages/Dashboard/ManageAllOrder';
 import AddProduct from './Components/Pages/Dashboard/AddProduct';
 import ManageProducts from './Components/Pages/Dashboard/ManageProducts';
 import Payment from './Components/Pages/Dashboard/Payment';
+import Blogs from './Components/Pages/Blogs/Blogs';
+import MyPortfolio from './Components/Pages/MyPortfolio/MyPortfolio';
 
 function App() {
   return (
@@ -41,6 +43,8 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
         <Route path='/resetpassword' element={<ResetPassword />} />
+        <Route path='/blogs' element={<Blogs />} />
+        <Route path='/my-portfolio' element={<MyPortfolio />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
       <ToastContainer />
