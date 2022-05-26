@@ -19,6 +19,7 @@ const User = () => {
     return (
         <div>
             <div className="overflow-x-auto">
+                <h1 className='text-3xl font-semibold mb-5'>Make Admin</h1>
                 <table className="table w-full">
                     <thead>
                         <tr>

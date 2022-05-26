@@ -6,7 +6,7 @@ import Loading from '../../Shared/Loading';
 import OrderRow from './OrderRow';
 
 const MyOrder = () => {
-    const [user] = useAuthState(auth)
+    const [user] = useAuthState(auth);
     const { data: myOrders, isLoading, refetch } = useQuery('myOrders', () => fetch(`http://localhost:5000/orders?email=${user.email}`, {
         method: 'GET',
         headers: {

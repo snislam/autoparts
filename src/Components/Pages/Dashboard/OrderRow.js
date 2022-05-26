@@ -7,20 +7,27 @@ const OrderRow = ({ order, index, refetch }) => {
 
 
     const handleDelete = () => {
-        fetch(`http://localhost:5000/order/${order._id}`, {
-            method: 'DELETE',
-            headers: {
-                'content-type': 'application/json',
-                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
-            }
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.deletedCount) {
-                    toast.warning('Succesfully cancelde.')
-                    refetch();
+        // <label for="confirmation-modal" class="btn modal-button">open modal</label>
+        const confirmation = window.confirm('Are sure to cancel it?');
+
+        if (confirmation) {
+            fetch(`http://localhost:5000/order/${order._id}`, {
+                method: 'DELETE',
+                headers: {
+                    'content-type': 'application/json',
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
                 }
             })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount) {
+                        toast.warning('Succesfully cancelde.')
+                        refetch();
+                    }
+                })
+        } else {
+            toast("Order kept!")
+        }
     }
 
     return (
@@ -36,7 +43,13 @@ const OrderRow = ({ order, index, refetch }) => {
             </td>
             <td>
                 {
-                    !order.paid ? <button onClick={handleDelete} className='btn btn-accent'>Cancel</button> : <p className='text-success'>Transection Id: {order.transectionId}</p>
+                    !order.paid ?
+                        <label
+                            onClick={handleDelete}
+                            for="confirmation-modal"
+                            className='btn'>Cancel</label>
+                        :
+                        <p className='text-success'>Transection Id: {order.transectionId}</p>
                 }
             </td>
         </tr>
