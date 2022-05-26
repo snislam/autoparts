@@ -13,7 +13,7 @@ const AddReview = () => {
         const review = { ...data, email: user.email, name: user.displayName }
         console.log(review)
 
-        fetch(`http://localhost:5000/review/${user.email}`, {
+        fetch(`https://morning-bayou-19534.herokuapp.com/review/${user.email}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',

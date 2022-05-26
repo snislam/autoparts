@@ -10,7 +10,7 @@ const stripePromise = loadStripe('pk_test_51L1trSH9rKtnD4mbKyOo1LnMYbzJEv2KXug78
 
 const Payment = () => {
     const { id } = useParams();
-    const { data, isLoading } = useQuery('sorder', () => fetch(`http://localhost:5000/order/${id}`, {
+    const { data, isLoading } = useQuery('sorder', () => fetch(`https://morning-bayou-19534.herokuapp.com/order/${id}`, {
         method: 'GET',
         headers: {
             'content-type': 'application/json',

@@ -4,7 +4,7 @@ import Loading from '../../Shared/Loading';
 import SingleProductCard from './SingleProductCard';
 
 const ProductHome = () => {
-    const { data: products, isLoading } = useQuery('products', () => fetch('http://localhost:5000/products').then(res => res.json()))
+    const { data: products, isLoading } = useQuery('products', () => fetch('https://morning-bayou-19534.herokuapp.com/products').then(res => res.json()))
 
     if (isLoading) {
         return <Loading />

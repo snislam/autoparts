@@ -11,7 +11,7 @@ const OrderRow = ({ order, index, refetch }) => {
         const confirmation = window.confirm('Are sure to cancel it?');
 
         if (confirmation) {
-            fetch(`http://localhost:5000/order/${order._id}`, {
+            fetch(`https://morning-bayou-19534.herokuapp.com/order/${order._id}`, {
                 method: 'DELETE',
                 headers: {
                     'content-type': 'application/json',

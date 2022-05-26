@@ -4,7 +4,7 @@ import Loading from '../../Shared/Loading';
 import ManageOrderRow from './ManageOrderRow';
 
 const ManageAllOrder = () => {
-    const { data: orders, isLoading, refetch } = useQuery('allOrders', () => fetch('http://localhost:5000/allorders', {
+    const { data: orders, isLoading, refetch } = useQuery('allOrders', () => fetch('https://morning-bayou-19534.herokuapp.com/allorders', {
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
         }

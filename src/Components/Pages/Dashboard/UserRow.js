@@ -5,7 +5,7 @@ const UserRow = ({ user, index, refetch }) => {
     const { name, email, _id } = user;
 
     const makeAdmin = () => {
-        fetch(`http://localhost:5000/user/${email}`, {
+        fetch(`https://morning-bayou-19534.herokuapp.com/user/${email}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -23,7 +23,7 @@ const UserRow = ({ user, index, refetch }) => {
     }
 
     const deleteUser = () => {
-        fetch(`http://localhost:5000/user/${email}`, {
+        fetch(`https://morning-bayou-19534.herokuapp.com/user/${email}`, {
             method: 'DELETE',
             headers: {
                 'content-type': 'application/json'

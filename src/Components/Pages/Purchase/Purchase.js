@@ -11,7 +11,7 @@ const Purchase = () => {
     const [user, loading] = useAuthState(auth)
     const { id } = useParams();
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
-    const { data: product, isLoading } = useQuery('singleProduct', () => fetch(`http://localhost:5000/purchase/${id}`).then(res => res.json()));
+    const { data: product, isLoading } = useQuery('singleProduct', () => fetch(`https://morning-bayou-19534.herokuapp.com/purchase/${id}`).then(res => res.json()));
 
 
     if (isLoading || loading) {
@@ -24,7 +24,7 @@ const Purchase = () => {
         const order = { ...data, totalPrice, productName: name, productId: product._id }
         console.log(order)
 
-        fetch('http://localhost:5000/orders', {
+        fetch('https://morning-bayou-19534.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

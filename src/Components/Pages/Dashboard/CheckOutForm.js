@@ -12,7 +12,7 @@ const CkeckoutForm = ({ data }) => {
     const { totalPrice, name, email, _id } = data;
 
     useEffect(() => {
-        fetch('http://localhost:5000/payment-intent', {
+        fetch('https://morning-bayou-19534.herokuapp.com/payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -69,7 +69,7 @@ const CkeckoutForm = ({ data }) => {
             setCardError('')
             setCardSuccess('Congrats! Successfully payment done.')
             setTransectionId(paymentIntent.id)
-            fetch(`http://localhost:5000/bookings/${_id}`, {
+            fetch(`https://morning-bayou-19534.herokuapp.com/bookings/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

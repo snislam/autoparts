@@ -7,7 +7,7 @@ const useAdmin = (user) => {
     const [adminLoader, setAdminLoader] = useState(true);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/user/admin/${email}`)
+        fetch(`https://morning-bayou-19534.herokuapp.com/user/admin/${email}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data)

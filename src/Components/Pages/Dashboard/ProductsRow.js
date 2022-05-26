@@ -9,7 +9,7 @@ const ProductsRow = ({ product, index, refetch }) => {
         const confirmation = window.confirm('After deleteing it, It remove frome homepage also.');
 
         if (confirmation) {
-            fetch(`http://localhost:5000/products/${product._id}`, {
+            fetch(`https://morning-bayou-19534.herokuapp.com/products/${product._id}`, {
                 method: 'DELETE',
                 headers: {
                     'content-type': 'application/json',

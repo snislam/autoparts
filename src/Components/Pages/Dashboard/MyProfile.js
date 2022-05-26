@@ -23,7 +23,7 @@ const MyProfile = () => {
         const linkdin = e.target.linkdin.value;
         const updatedUser = { name, email, number, education, location, city, linkdin }
 
-        fetch(`http://localhost:5000/user/update/${email}`, {
+        fetch(`https://morning-bayou-19534.herokuapp.com/user/update/${email}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',

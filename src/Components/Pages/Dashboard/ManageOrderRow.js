@@ -6,7 +6,7 @@ const ManageOrderRow = ({ order, index, refetch }) => {
     const [product, setProduct] = useState({})
 
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${productId}`, {
+        fetch(`https://morning-bayou-19534.herokuapp.com/products/${productId}`, {
             method: 'GET',
             headers: {
                 'content-type': 'application/json',
@@ -22,7 +22,7 @@ const ManageOrderRow = ({ order, index, refetch }) => {
         const id = order._id;
         const orderUpdate = { shipped: true }
         const productUpdate = { quantity: (product.quantity - order.quantity) }
-        fetch(`http://localhost:5000/orders/${id}`, {
+        fetch(`https://morning-bayou-19534.herokuapp.com/orders/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',
@@ -39,7 +39,7 @@ const ManageOrderRow = ({ order, index, refetch }) => {
             });
 
 
-        fetch(`http://localhost:5000/products/${productId}`, {
+        fetch(`https://morning-bayou-19534.herokuapp.com/products/${productId}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',
@@ -61,7 +61,7 @@ const ManageOrderRow = ({ order, index, refetch }) => {
         const confirmation = window.confirm('Are sure to cancel it?');
 
         if (confirmation) {
-            fetch(`http://localhost:5000/order/${order._id}`, {
+            fetch(`https://morning-bayou-19534.herokuapp.com/order/${order._id}`, {
                 method: 'DELETE',
                 headers: {
                     'content-type': 'application/json',

@@ -4,7 +4,7 @@ import Loading from '../../Shared/Loading';
 import ProductsRow from './ProductsRow';
 
 const ManageProducts = () => {
-    const { data: products, isLoading, refetch } = useQuery('allProductsManage', () => fetch('http://localhost:5000/products', {
+    const { data: products, isLoading, refetch } = useQuery('allProductsManage', () => fetch('https://morning-bayou-19534.herokuapp.com/products', {
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
         }
