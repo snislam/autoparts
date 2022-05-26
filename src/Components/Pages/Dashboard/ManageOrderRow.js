@@ -56,6 +56,30 @@ const ManageOrderRow = ({ order, index, refetch }) => {
             });
     }
 
+    const handleDelete = () => {
+        // <label for="confirmation-modal" class="btn modal-button">open modal</label>
+        const confirmation = window.confirm('Are sure to cancel it?');
+
+        if (confirmation) {
+            fetch(`http://localhost:5000/order/${order._id}`, {
+                method: 'DELETE',
+                headers: {
+                    'content-type': 'application/json',
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                }
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount) {
+                        toast.warning('Succesfully cancelde.')
+                        refetch();
+                    }
+                })
+        } else {
+            toast("Order kept!")
+        }
+    }
+
 
     return (
         <tr>
@@ -91,7 +115,7 @@ const ManageOrderRow = ({ order, index, refetch }) => {
                 }
                 {
 
-                    (!order.paid) && <button className='btn btn-warning'>Cancel</button>
+                    (!order.paid) && <button onClick={handleDelete} className='btn btn-warning'>Cancel</button>
                 }
             </td>
         </tr>
