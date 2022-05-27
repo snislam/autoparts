@@ -24,8 +24,8 @@ const MyPortfolio = () => {
             <h2 className='text-md text-neutral py-2 font-bold'>Thre website links</h2>
             <ol className='text-md text-neutral py-2'>
                 <li className='text-primary'><a href="https://bike-park-8a78c.web.app/">https://bike-park-8a78c.web.app/</a></li>
-                <li className='text-primary'><a href="https://bike-park-8a78c.web.app/">https://career-hunter-6eb88.web.app/</a></li>
-                <li className='text-primary'><a href="https://bike-park-8a78c.web.app/">https://electric-car-review.netlify.app/</a></li>
+                <li className='text-primary'><a href="https://career-hunter-6eb88.web.app/">https://career-hunter-6eb88.web.app/</a></li>
+                <li className='text-primary'><a href="https://electric-car-review.netlify.app/">https://electric-car-review.netlify.app/</a></li>
             </ol>
         </div>
     );
