@@ -13,13 +13,13 @@ const ProductHome = () => {
     }, [data])
 
     const handleAsendingOrder = () => {
-        fetch('http://localhost:5000/asending-products')
+        fetch('https://morning-bayou-19534.herokuapp.com/asending-products')
             .then(res => res.json())
             .then(data => setProducts(data))
     }
 
     const handleDesendingOrder = () => {
-        fetch('http://localhost:5000/desending-products')
+        fetch('https://morning-bayou-19534.herokuapp.com/desending-products')
             .then(res => res.json())
             .then(data => setProducts(data))
     }
