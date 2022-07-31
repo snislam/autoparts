@@ -93,6 +93,10 @@ const Login = () => {
                     <p className='mt-3'>Forgot Password? <Link to='/resetpassword' className='text-primary'>Reset.</Link></p>
                 </form>
                 <SocialLogin signInWithGoogle={signInWithGoogle} />
+                <div className='pt-7 flex flex-row justify-between items-center'>
+                    <button onClick={() => signInWithEmailAndPassword('abc@def.com', '123456')} className='py-2 px-4 bg-indigo-700 text-slate-50 mr-5 rounded-md'>Demo Login - Admin</button>
+                    <button onClick={() => signInWithEmailAndPassword('s@v.com', '123456')} className='py-2 px-4 bg-orange-700 text-slate-50 rounded-md'>Demo Login - User</button>
+                </div>
             </div>
         </div>
     );
