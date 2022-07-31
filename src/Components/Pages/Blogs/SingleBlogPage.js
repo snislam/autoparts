@@ -8,7 +8,7 @@ const SingleBlogPage = () => {
     const [blog, setBlog] = useState({})
     const { featured_img, question, answer, author, date } = blog
     useEffect(() => {
-        fetch(`http://localhost:5000/blog/${id}`)
+        fetch(`https://morning-bayou-19534.herokuapp.com/blog/${id}`)
             .then(res => res.json())
             .then(data => setBlog(data))
     }, [id])

@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 const HomeBlogs = () => {
     const [blogs, setBlogs] = useState()
     useEffect(() => {
-        fetch('http://localhost:5000/home-blog')
+        fetch('https://morning-bayou-19534.herokuapp.com/home-blog')
             .then(res => res.json())
             .then(data => setBlogs(data))
     }, [])
