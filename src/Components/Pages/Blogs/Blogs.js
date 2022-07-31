@@ -4,17 +4,17 @@ import Loading from '../../Shared/Loading';
 import Blog from './Blog';
 
 const Blogs = () => {
-    const { data: blogs, isLoading } = useQuery("blogs", () => fetch('blogs.json').then(res => res.json()))
+    const { data: blogs, isLoading } = useQuery("blogs", () => fetch('http://localhost:5000/blogs').then(res => res.json()))
 
     if (isLoading) {
         return <Loading />
     }
     return (
         <div>
-            <h1 className='text-4xl text-center font-bold text-primary mt-5'>Question and answer</h1>
-            <div>
+            <h1 className='text-4xl text-center font-bold text-primary mt-5'>Our Blogs</h1>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-2'>
                 {
-                    blogs.map(blog => <Blog blog={blog} key={blog.id} />)
+                    blogs.map(blog => <Blog blog={blog} key={blog._id} />)
                 }
             </div>
         </div>

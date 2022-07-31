@@ -22,6 +22,7 @@ import ManageProducts from './Components/Pages/Dashboard/ManageProducts';
 import Payment from './Components/Pages/Dashboard/Payment';
 import Blogs from './Components/Pages/Blogs/Blogs';
 import MyPortfolio from './Components/Pages/MyPortfolio/MyPortfolio';
+import SingleBlogPage from './Components/Pages/Blogs/SingleBlogPage';
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
         <Route path='/register' element={<Register />} />
         <Route path='/resetpassword' element={<ResetPassword />} />
         <Route path='/blogs' element={<Blogs />} />
+        <Route path='/blog/:id' element={<SingleBlogPage />} />
         <Route path='/my-portfolio' element={<MyPortfolio />} />
         <Route path='*' element={<NotFound />} />
       </Routes>

@@ -3,6 +3,7 @@ import BusinessSummary from './BusinessSummary';
 import CallToAction from './CallToAction';
 import Featured from './Featured';
 import HeroBanner from './HeroBanner';
+import HomeBlogs from './HomeBlogs';
 import ProductHome from './ProductHome';
 import ReviewsHome from './ReviewsHome';
 
@@ -13,6 +14,7 @@ const Home = () => {
             <ProductHome />
             <Featured />
             <BusinessSummary />
+            <HomeBlogs />
             <ReviewsHome />
             <CallToAction />
         </div>

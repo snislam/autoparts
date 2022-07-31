@@ -1,16 +1,17 @@
 import React from 'react';
-import car from '../../../images/car.png'
+import parts from '../../../images/banner.png';
+import bg from '../../../images/ban_bg.jpg';
 
 const HeroBanner = () => {
     return (
-        <div className='flex flex-col md:flex-row justify-between items-center px-12 py-20 bg-gray-200'>
+        <div className='flex flex-col md:flex-row justify-between items-center px-12 py-32] min-h-screen' style={{ backgroundImage: `url(${bg})` }}>
             <div className='w-full md:w-1/2'>
-                <h1 className='text-5xl font-bold text-primary mb-3'>AutoParts supplier company</h1>
-                <p className='text-neutral text-lg'>We are providing the best car parts all over the world. We have well established manufacturing environment. We are dealing 1.5 million client right now.</p>
+                <h1 className='text-5xl font-bold text-slate-300 mb-3'>AutoParts supplier company</h1>
+                <p className='text-slate-400 text-lg'>We are providing the best car parts all over the world. We have well established manufacturing environment. We are dealing 1.5 million client right now.</p>
                 <button className='btn btn-primary mt-5'>Get a Qoute</button>
             </div>
-            <div className='w-full md:w-1/2'>
-                <img src={car} alt="car parts supplier" />
+            <div className='hidden md:flex w-full md:w-1/2'>
+                <img src={parts} alt="car parts supplier" />
             </div>
         </div >
     );

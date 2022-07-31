@@ -5,7 +5,7 @@ const SingleProductCard = ({ product }) => {
     const { _id, name, price, quantity, min_order_qnt, img, description
     } = product;
     return (
-        <div className='rounded-md shadow-sm'>
+        <div className='rounded-md shadow-lg'>
             <img className='w-full h-64' src={img} alt={name} />
             <div className='p-5'>
                 <h2 className='text-2xl font-bold'>{name}</h2>

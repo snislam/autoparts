@@ -13,7 +13,7 @@ const ProductHome = () => {
     return (
         <div className='px-12 py-12'>
             <h2 className='text-5xl text-secondary text-center font-bold py-12'>Our Products</h2>
-            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8'>
                 {
                     products.map(product => <SingleProductCard
                         key={product._id}

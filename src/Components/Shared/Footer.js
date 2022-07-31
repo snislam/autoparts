@@ -13,7 +13,8 @@ const Footer = () => {
                     <h2 className='text-2xl font-bold text-slate-400 mb-3'>Important Links</h2>
                     <ul>
                         <li><Link to='/dashboard'>My Profile</Link></li>
-                        <li><Link to='/blog'>Blog</Link></li>
+                        <li><Link to='/blogs'>Blogs</Link></li>
+                        <li><Link to='/my-portfolio'>Portfolio</Link></li>
                     </ul>
                 </div>
                 <div className='w-full md:w-1/3'>

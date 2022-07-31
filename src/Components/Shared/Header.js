@@ -15,13 +15,12 @@ const Header = () => {
     const menu = <>
         <li><Link to='/'>Home</Link> </li>
         <li><Link to='/blogs'>Blogs</Link> </li>
-        <li><Link to='/my-portfolio'>My Portfolio</Link> </li>
         {
             user ?
                 <>
                     <li><Link to='/dashboard'>Dashboard</Link> </li>
-                    <li className='bg-slate-300'><p>Hello, {user.displayName?.split(' ')[0]}</p></li>
                     <li><button onClick={handelSignOut}>Sign Out</button></li>
+                    <li className='bg-slate-300'><p>Hello, {user.displayName?.split(' ')[0]}</p></li>
                 </>
                 :
                 <li><Link to='/login'>Login</Link> </li>
@@ -29,7 +28,7 @@ const Header = () => {
     </>
 
     return (
-        <div className="navbar bg-base-100 shadow-lg">
+        <div className="navbar bg-base-100 shadow-lg sticky top-0 z-50">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex="0" className="btn btn-ghost lg:hidden">

@@ -1,26 +1,41 @@
 [
     {
         "id": 101,
+        "author": "Najmul",
+        "date": "31 July 2022",
+        "featured_img": "https://i.ibb.co/tDQm0k9/candle-3992363-640.jpg",
         "question": "How will you improve the performance of a React Application?",
         "answer": "To successfully optimize our React application, we must first find a performance problem in our application to rectify. I can improve react performance by keeping component state local where necessary.Memoizing React components to prevent unnecessary re-renders.Code-splitting in React using dynamic import() method. Also Windowing or list virtualization in React applications.Lazy loading images in React is also very powerful."
     },
     {
         "id": 102,
+        "author": "Najmul",
+        "featured_img": "https://i.ibb.co/51MdQ8f/car-2322779-640.jpg",
+        "date": "31 July 2022",
         "question": "What are the different ways to manage a state in a React application",
         "answer": "We can manage a statein four diffrenet ways in react. Firstly,  Local (UI) state – Local state is data we manage in one or another component. Secondly, Global (UI) state – Global state is data we manage across multiple components. Thirdly, Server state – Data that comes from an external server that must be integrated with our UI state. Finally, URL state – Data that exists on our URLs, including the pathname and query parameters."
     },
     {
         "id": 103,
+        "author": "Najmul",
+        "date": "31 July 2022",
+        "featured_img": "https://i.ibb.co/tDQm0k9/candle-3992363-640.jpg",
         "question": "How does prototypical inheritance work?",
         "answer": "Actually protipic inheritence work on the basis of object.Every object with its methods and properties contains an internal and hidden property known as [[Prototype]]. The Prototypal Inheritance is a feature in javascript used to add methods and properties in objects. It is a method by which an object can inherit the properties and methods of another object. Traditionally, in order to get and set the [[Prototype]] of an object, we use Object.getPrototypeOf and Object.setPrototypeOf. Nowadays, in modern language, it is being set using __proto__."
     },
     {
         "id": 104,
+        "author": "Najmul",
+        "date": "31 July 2022",
+        "featured_img": "https://i.ibb.co/qmCmSgw/car-621820-640.jpg",
         "question": "You have an array of products. Each product has a name, price, description, etc. How will you implement a search to find products by name?",
         "answer": "As it is an array I will use,   products.find(product => product.name.includes('search text')  . This will help to find out the correct result"
     },
     {
         "id": 105,
+        "author": "Najmul",
+        "date": "31 July 2022",
+        "featured_img": "https://i.ibb.co/dKQ4pHm/clutch-2755548-640.jpg",
         "question": "What is a unit test? Why should write unit tests?",
         "answer": "Unit Testing is a testing method that tests an individual unit of software in isolation. Unit testing for React Apps means testing an individual React Component. Unit Testing is important for React Apps, as it helps in testing the individual functionality of React components. Moreover, any error in code can be identified at the beginning itself, saving time to rectify it at later stages."
     }
