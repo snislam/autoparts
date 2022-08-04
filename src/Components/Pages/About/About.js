@@ -1,6 +1,7 @@
 import React from 'react';
 import BusinessSummary from '../Home/BusinessSummary';
 import CallToAction from '../Home/CallToAction';
+import ReviewsHome from '../Home/ReviewsHome';
 import AboutBanner from './AboutBanner';
 import AboutHistory from './AboutHistory';
 
@@ -10,6 +11,7 @@ const About = () => {
             <AboutBanner />
             <AboutHistory />
             <BusinessSummary />
+            <ReviewsHome />
             <CallToAction />
         </div>
     );
