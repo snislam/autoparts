@@ -23,6 +23,7 @@ import Payment from './Components/Pages/Dashboard/Payment';
 import Blogs from './Components/Pages/Blogs/Blogs';
 import MyPortfolio from './Components/Pages/MyPortfolio/MyPortfolio';
 import SingleBlogPage from './Components/Pages/Blogs/SingleBlogPage';
+import About from './Components/Pages/About/About';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/about' element={<About />} />
         <Route path='/dashboard' element={<RequireAuth><Dashboard /></RequireAuth>} >
           <Route index element={<MyProfile />} />
           <Route path='/dashboard/add-review' element={<AddReview />} />
